@@ -1,0 +1,8 @@
+<div class="title">
+  <%= link_to post.title, post_link(post) %>
+</div>
+<div class="tagline" title="<%= post.created_at %>">
+  submitted <%= time_ago_in_words post.created_at %> ago
+  to <%= link_to post.category.name, category_path(post.category) %>
+  <%= "by #{post.user.username}" if post.user.present? %>
+</div>
